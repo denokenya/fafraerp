@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+School Management System for managing students ,teachers ,fees payment and exams
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
