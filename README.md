@@ -1,3 +1,5 @@
+School Management System for managing students ,teachers ,fees payment and exams
+
 # Getting Started with Create React App
 
 School Management System for managing students ,teachers ,fees payment and exams
