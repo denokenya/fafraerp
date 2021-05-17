@@ -6,11 +6,11 @@ import Button from 'react-bootstrap/Button';
 
 const register = () => {
    return (
-    <Container fluid >
+    <Container fluid = "sm" >
 
     <Form>
   <Form.Row className="align-items-center">
-    <Form.Group as={Col} controlId="formGridEmail">
+    <Form.Group as={Col } controlId="formGridEmail">
       <Form.Label>Email</Form.Label>
       <Form.Control type="email" placeholder="Enter email" />
     </Form.Group>
