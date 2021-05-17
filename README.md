@@ -1,4 +1,4 @@
-#School Management System in React JS and Django Python.
+# School Management System in React JS and Django Python.
 The school app is used to capture all schools operations such as students, teachers ,parents ,exams,subjects,accounts etc
 
 # Getting Started with Create React App
