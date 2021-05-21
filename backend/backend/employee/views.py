@@ -4,7 +4,7 @@ from .models import Employee
 from .serializers import EmployeeSerializer
 
 
-class PostViewSet(ModelViewSet):
+class EmployeeViewSet(ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
     permission_classes = [AllowAny]
