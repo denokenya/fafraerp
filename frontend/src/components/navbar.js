@@ -16,7 +16,7 @@ const navbarhead = () => {
       <Navbar   sticky = "top"  bg="dark" variant="dark" collapseOnSelect  expand = 'sm' >
 
           <Container>
-            <Navbar.Brand href="#home" >School ERP</Navbar.Brand>
+            <Navbar.Brand className = "text-success" href="#home" >School ERP</Navbar.Brand>
             <Navbar.Toggle arial-aria-controls = 'responsive-navbar' />
             <Navbar.Collapse id='responsive-navbar-nav'className="justify-content-left" >
           
@@ -24,25 +24,25 @@ const navbarhead = () => {
               <Nav className = "ml-auto">
               
               <LinkContainer to = "/Students">
-              <Nav.Link ><i className ='fas fa-users' ></i>Students</Nav.Link>
+              <Nav.Link className = "text-success" ><i className ='fas fa-users' ></i>Students</Nav.Link>
               </LinkContainer>
              
              <LinkContainer to = "/Teachers">
-              <Nav.Link ><i className ='fas fa-user' ></i>Teachers</Nav.Link>
+              <Nav.Link className = "text-success" ><i className ='fas fa-user' ></i>Teachers</Nav.Link>
               </LinkContainer>
               
-              <Nav.Link ><i className ='fas fa-th-list' ></i>Classes</Nav.Link>
+              <Nav.Link className = "text-success" ><i className ='fas fa-th-list' ></i>Classes</Nav.Link>
               
                 
               
-              <Nav.Link  ><i className ='fas fa-th' ></i>Subjects</Nav.Link>
+              <Nav.Link className = "text-success "  ><i className ='fas fa-th' ></i>Subjects</Nav.Link>
               
-              <NavDropdown menuAlign="left" title="Finance" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#feespayment">Fees Payment</NavDropdown.Item>
-              <NavDropdown.Item href="#suppliers">Suppliers</NavDropdown.Item>
-              <NavDropdown.Item href="#invoices">Invoices</NavDropdown.Item>
+              <NavDropdown className = "text-success" menuAlign="left" title="Finance" id="collasible-nav-dropdown">
+              <NavDropdown.Item className = "text-success" href="#feespayment">Fees Payment</NavDropdown.Item>
+              <NavDropdown.Item className = "text-success"href="#suppliers">Suppliers</NavDropdown.Item>
+              <NavDropdown.Item className = "text-success" href="#invoices">Invoices</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="reports">Reports</NavDropdown.Item>
+              <NavDropdown.Item className = "text-success" href="reports">Reports</NavDropdown.Item>
             </NavDropdown>
               
               </Nav>

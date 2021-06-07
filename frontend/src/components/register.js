@@ -1,14 +1,37 @@
 
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { Col, Container } from "react-bootstrap";
+import { Col, 
+  Container ,
+  Accordion ,
+  Card,
+ } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 
 const register = () => {
    return (
-    <Container fluid = "sm" >
 
-    <Form>
+    <div className='mt-5'>
+    <Container fluid = "sm" >
+  <Accordion>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="0">
+        Basic Information!
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="0">
+      <Card.Body>Hello! I'm the body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+        Click me!
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="1">
+    <Form className='mr-5  ml-5 mt-3'>
   <Form.Row className="align-items-center">
     <Form.Group as={Col } controlId="formGridEmail">
       <Form.Label>Email</Form.Label>
@@ -55,12 +78,18 @@ const register = () => {
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
 
-  <Button variant="primary" type="submit">
+ 
+</Form>
+    </Accordion.Collapse>
+  </Card>
+</Accordion>
+
+<Button className='mt-3' variant="primary" type="submit">
     Submit
   </Button>
-</Form>
 
 </Container>
+</div>
    )
 }
 

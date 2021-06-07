@@ -1,8 +1,7 @@
 from . import views
-from rest_framework.routers import SimpleRouter
+from rest_framework.routers import DefaultRouter
 
-router = SimpleRouter()
-router.register("employees", views.EmployeeViewSet , "employees")
+router = DefaultRouter()
+router.register("api/", views.EmployeeViewSet, "employees")
 
 urlpatterns = router.urls
-
