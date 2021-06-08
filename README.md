@@ -2,6 +2,8 @@
 
 The is a school management system which is still under development.
 
+It will be used to capture the schools operations such as students,examinnation,fees payment, staff management etc.
+
 # Frontend
 
 React JS
