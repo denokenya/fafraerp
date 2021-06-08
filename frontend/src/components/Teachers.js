@@ -17,7 +17,8 @@ const Teachers = () => {
 
        <Card border= "success" className ="bg-dark mt-5">
         <Card.Header as = "h5" className = "bg-success " >
-        Basic Information
+          <strong>Basic Information</strong>
+        
         
         </Card.Header>
             <Card.Body>

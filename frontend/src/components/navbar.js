@@ -16,7 +16,7 @@ const navbarhead = () => {
       <Navbar   sticky = "top"  bg="dark" variant="dark" collapseOnSelect  expand = 'sm' >
 
           <Container>
-            <Navbar.Brand className = "text-success" href="#home" >School ERP</Navbar.Brand>
+            <Navbar.Brand className = "text-success" href="#home" ><strong>School ERP</strong></Navbar.Brand>
             <Navbar.Toggle arial-aria-controls = 'responsive-navbar' />
             <Navbar.Collapse id='responsive-navbar-nav'className="justify-content-left" >
           
