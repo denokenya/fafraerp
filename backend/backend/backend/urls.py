@@ -21,3 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('employee.urls'))
 ]
+admin.site.site_header = "School ERP Admin Area"
