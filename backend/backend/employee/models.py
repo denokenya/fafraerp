@@ -97,47 +97,54 @@ MARITAL_STATUS = (
 
 
 class Employee (models.Model):
-    employeeID = models.CharField(
-        max_length=50, null=False, blank=False, unique=True)
+    employeeID = models.CharField("Employee ID",
+                                  max_length=50, null=False, blank=False, unique=True)
     user = models.ForeignKey(
         User, related_name="employees",
         on_delete=models.CASCADE, null=True
     )
-    employeeRole = models.CharField(
-        choices=ROLE, max_length=50, blank=False,  default=ADMIN)
-    employeeDesignation = models.CharField(
-        choices=DESIGNATION, max_length=50, blank=False, default=FACULTY)
-    employeeDepartment = models.CharField(
-        choices=DEPARTMENT, max_length=50, blank=False,  default=ACADEMIC)
-    employeeFirstName = models.CharField(
-        max_length=60, blank=False, null=False, default='name')
-    employeeLastName = models.CharField(
-        max_length=60, blank=False, null=False, default='name')
-    employeeFatherName = models.CharField(
-        max_length=60, blank=True, null=True, default='name')
-    employeeEmail = models.EmailField(
-        null=False, blank=False, unique=True, default='de@gmail.com')
-    employeeGender = models.CharField(
-        choices=GENDER, max_length=10, blank=False, default=MALE)
-    employeeDateOfBirth = models.DateField(
-        null=True, blank=True, default='1900-01-01')
-    employeeDateOfJoining = models.DateTimeField(null=True, blank=True)
+    employeeRole = models.CharField("Role",
+                                    choices=ROLE, max_length=50, blank=False,  default=ADMIN)
+    employeeDesignation = models.CharField("Designation",
+                                           choices=DESIGNATION, max_length=50, blank=False, default=FACULTY)
+    employeeDepartment = models.CharField("Department",
+                                          choices=DEPARTMENT, max_length=50, blank=False,  default=ACADEMIC)
+    employeeFirstName = models.CharField("First Name",
+                                         max_length=60, blank=False, null=False, default='name')
+    employeeLastName = models.CharField("Last Name",
+                                        max_length=60, blank=False, null=False, default='name')
+    employeeFatherName = models.CharField("Father Name",
+                                          max_length=60, blank=True, null=True, default='name')
+    employeeEmail = models.EmailField("Email",
+                                      null=False, blank=False, unique=True, default='de@gmail.com')
+    employeeGender = models.CharField("Gender",
+                                      choices=GENDER, max_length=10, blank=False, default=MALE)
+    employeeDateOfBirth = models.DateField("Date Of Birth",
+                                           null=True, blank=True, default='1900-01-01')
+    employeeDateOfJoining = models.DateTimeField(
+        "Date Of Joining", null=True, blank=True)
 
-    employeePhone = models.CharField(
-        max_length=17, null=False, blank=False, unique=True, default='0711210516')
-    employeeEmergencyContactNumber = models.CharField(
-        max_length=17, null=False, blank=True, default='11111111')
-    employeeMaritialStatus = models.CharField(
-        choices=MARITAL_STATUS, max_length=200, blank=True, default=SINGLE)
-    employeeCurrentAddress = models.TextField(
-        max_length=300, null=True, blank=True)
-    employeeParmanentAddress = models.TextField(
-        max_length=300, null=True, blank=True)
-    employeeQualification = models.TextField(
-        max_length=300, null=True, blank=True)
-    employeeWorkExperience = models.TextField(
-        max_length=300, null=True, blank=True)
-    employeeNote = models.CharField(max_length=300, null=True, blank=True)
+    employeePhone = models.CharField("Mobile Number",
+                                     max_length=17, null=False, blank=False, unique=True, default='0711210516')
+    employeeEmergencyContactNumber = models.CharField("Emergency Contact Number",
+                                                      max_length=17, null=False, blank=True, default='11111111')
+    employeeMaritialStatus = models.CharField("Maritial Status",
+                                              choices=MARITAL_STATUS, max_length=200, blank=True, default=SINGLE)
+    employeeCurrentAddress = models.TextField("Current Address",
+                                              max_length=300, null=True, blank=True)
+    employeeParmanentAddress = models.TextField("Parmanent Address",
+                                                max_length=300, null=True, blank=True)
+    employeeQualification = models.TextField("Qualification",
+                                             max_length=300, null=True, blank=True)
+    employeeWorkExperience = models.TextField("Work Experience",
+                                              max_length=300, null=True, blank=True)
+    employeeNote = models.CharField(
+        "Note", max_length=300, null=True, blank=True)
 
     def __str__(self):
         return self.employeeFirstName
+
+    class Meta:
+        ordering = ["employeeRole"]
+        verbose_name = "employee"
+        verbose_name_plural = "employees"
