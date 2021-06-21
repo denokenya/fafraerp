@@ -4,9 +4,6 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
-# ***************Department*******************
-# _____________________________________________
-
 FACULTY = "Faculty"
 ACCOUNTANT = "Accountant"
 ADMIN = "Admin"
@@ -61,9 +58,6 @@ DEPARTMENT = (
 
 )
 
-# ***************Designation*******************
-# _____________________________________________
-
 
 ROLE = (
     (ADMIN, "Admin"),
@@ -74,8 +68,6 @@ ROLE = (
     (SUPER_ADMIN, "Superadmin"),
 )
 
-# ***************Designation*******************
-# _____________________________________________
 
 GENDER = (
 
@@ -96,6 +88,9 @@ MARITAL_STATUS = (
 
 )
 
+# ***************Designation*******************
+# _____________________________________________
+
 
 class Designation(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -109,6 +104,9 @@ class Meta:
     ordering = ["name"]
     verbose_name = "designation"
     verbose_name_plural = "designations"
+
+# ***************Department*******************
+# _____________________________________________
 
 
 class Department(models.Model):
@@ -124,6 +122,9 @@ class Meta:
     verbose_name = "department"
     verbose_name_plural = "departments"
 
+# ***************Designation*******************
+# _____________________________________________
+
 
 class Role(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -137,6 +138,9 @@ class Meta:
     ordering = ["name"]
     verbose_name = "role"
     verbose_name_plural = "role"
+
+# ***************Employee*******************
+# _____________________________________________
 
 
 class Employee (models.Model):
