@@ -101,6 +101,7 @@ class Designation(models.Model):
 
 
 class Meta:
+    #dbtable = "designations"
     ordering = ["name"]
     verbose_name = "designation"
     verbose_name_plural = "designations"
@@ -118,6 +119,7 @@ class Department(models.Model):
 
 
 class Meta:
+   # dbtable = "departments"
     ordering = ["name"]
     verbose_name = "department"
     verbose_name_plural = "departments"
@@ -135,6 +137,7 @@ class Role(models.Model):
 
 
 class Meta:
+    #dbtable = "roles"
     ordering = ["name"]
     verbose_name = "role"
     verbose_name_plural = "role"
@@ -193,6 +196,7 @@ class Employee (models.Model):
         return self.employeeFirstName
 
     class Meta:
+       # dbtable = "employees"
         ordering = ["role"]
         verbose_name = "employee"
         verbose_name_plural = "employees"
