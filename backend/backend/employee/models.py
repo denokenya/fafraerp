@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime
 from django.utils import timezone
-from django.contrib.auth.models import User
 
 
 FACULTY = "Faculty"
@@ -88,7 +87,7 @@ MARITAL_STATUS = (
 
 )
 
-# ***************Designation*******************
+# ***************Designation model*******************
 # _____________________________________________
 
 
@@ -99,14 +98,13 @@ class Designation(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        db_table = "designations"
+        ordering = ["name"]
+        verbose_name = "designation"
+        verbose_name_plural = "designations"
 
-class Meta:
-    #dbtable = "designations"
-    ordering = ["name"]
-    verbose_name = "designation"
-    verbose_name_plural = "designations"
-
-# ***************Department*******************
+# ***************Department model*******************
 # _____________________________________________
 
 
@@ -117,14 +115,13 @@ class Department(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        db_table = "departments"
+        ordering = ["name"]
+        verbose_name = "department"
+        verbose_name_plural = "departments"
 
-class Meta:
-   # dbtable = "departments"
-    ordering = ["name"]
-    verbose_name = "department"
-    verbose_name_plural = "departments"
-
-# ***************Designation*******************
+# ***************Designation model*******************
 # _____________________________________________
 
 
@@ -135,24 +132,19 @@ class Role(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        db_table = "roles"
+        ordering = ["name"]
+        verbose_name = "role"
+        verbose_name_plural = "roles"
 
-class Meta:
-    #dbtable = "roles"
-    ordering = ["name"]
-    verbose_name = "role"
-    verbose_name_plural = "role"
-
-# ***************Employee*******************
+# ***************Employee model*******************
 # _____________________________________________
 
 
 class Employee (models.Model):
     employeeID = models.CharField("Employee ID",
                                   max_length=50, null=False, blank=False, unique=True)
-    user = models.ForeignKey(
-        User, related_name="employees",
-        on_delete=models.CASCADE, null=True
-    )
     role = models.ForeignKey(
         Role,  on_delete=models.CASCADE)
     designation = models.ForeignKey(
@@ -196,7 +188,7 @@ class Employee (models.Model):
         return self.employeeFirstName
 
     class Meta:
-       # dbtable = "employees"
+        db_table = 'employees'
         ordering = ["role"]
         verbose_name = "employee"
         verbose_name_plural = "employees"

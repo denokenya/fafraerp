@@ -10,12 +10,17 @@ def update_designation(modeladmin, request, queryset):
 
 update_designation.short_description = 'Update role'
 
+# sets values for how the admin site lists your designations
+
 
 class DesignationAdmin(admin.ModelAdmin):
     list_display = ['name']
     search_fields = ['name']
     ordering = ['name']
     list_display_links = ['name']
+    list_per_page = 15
+
+# sets values for how the admin site lists your departments
 
 
 class DepartmentAdmin(admin.ModelAdmin):
@@ -23,6 +28,9 @@ class DepartmentAdmin(admin.ModelAdmin):
     search_fields = ['name']
     ordering = ['name']
     list_display_links = ['name']
+    list_per_page = 15
+
+# sets values for how the admin site lists your roles
 
 
 class RoleAdmin(admin.ModelAdmin):
@@ -30,6 +38,9 @@ class RoleAdmin(admin.ModelAdmin):
     search_fields = ['name']
     ordering = ['name']
     list_display_links = ['name']
+    list_per_page = 15
+
+# sets values for how the admin site lists your employees
 
 
 class EmployeeAdmin(admin.ModelAdmin):
@@ -38,7 +49,7 @@ class EmployeeAdmin(admin.ModelAdmin):
         'employeeID',
         'employeeFirstName',
         'employeeLastName',
-        # 'role',
+        'role',
         'designation',
         'department',
         'employeePhone',
@@ -67,12 +78,11 @@ class EmployeeAdmin(admin.ModelAdmin):
         'designation',
         'department',
     ]
-
+    list_per_page = 15
     actions = [update_designation]
 
 
 admin.site.register(Employee, EmployeeAdmin)
-
 admin.site.register(Designation, DesignationAdmin)
 admin.site.register(Department, DesignationAdmin)
 admin.site.register(Role, RoleAdmin)
