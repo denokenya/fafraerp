@@ -19,6 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('employee.urls'))
+    path('', include('employee.urls')),
+    path('accounts/', include('rest_framework.urls')),
+
 ]
 admin.site.site_header = "School ERP Admin Area"
