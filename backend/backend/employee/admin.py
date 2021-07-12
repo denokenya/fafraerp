@@ -84,5 +84,5 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 admin.site.register(Employee, EmployeeAdmin)
 admin.site.register(Designation, DesignationAdmin)
-admin.site.register(Department, DesignationAdmin)
+admin.site.register(Department, DepartmentAdmin)
 admin.site.register(Role, RoleAdmin)

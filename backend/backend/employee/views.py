@@ -1,28 +1,50 @@
-from rest_framework.permissions import AllowAny
+from rest_framework import authentication, permissions, filters
+import django_filters.rest_framework
 from rest_framework.viewsets import ModelViewSet
 from .models import Employee, Designation, Department, Role
 from .serializers import EmployeeSerializer, DepartmentSerializer, DesignationSerializer, RoleSerializer
 
 
-class DesignationViewSet(ModelViewSet):
+class DefaultMixin(object):
+    """Default settings for view authentication,permissions,filtering and pagination.
+    DefaultMixin will be one of the base classes for the API view classes to define these options"""
+
+    authentication_classes = (
+        authentication.BasicAuthentication,
+        authentication.TokenAuthentication,
+    )
+    permission_classes = (
+        permissions.IsAuthenticated,
+    )
+    paginate_by = 25
+    paginate_by_param = 'page_size'
+    max_paginate_by = 100
+    filter_backends = [filters.SearchFilter]
+
+
+class DesignationViewSet(DefaultMixin, ModelViewSet):
     queryset = Designation.objects.all()
     serializer_class = DesignationSerializer
-    permission_classes = [AllowAny]
+    search_fields = ('name',)
+    ordering_fields = ('name',)
 
 
-class DepartmentViewSet(ModelViewSet):
+class DepartmentViewSet(DefaultMixin, ModelViewSet):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer
-    permission_classes = [AllowAny]
+    search_fields = ('name',)
+    ordering_fields = ('name',)
 
 
-class RoleViewSet(ModelViewSet):
+class RoleViewSet(DefaultMixin, ModelViewSet):
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
-    permission_classes = [AllowAny]
+    search_fields = ('name',)
+    ordering_fields = ('name',)
 
 
-class EmployeeViewSet(ModelViewSet):
+class EmployeeViewSet(DefaultMixin, ModelViewSet):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
-    permission_classes = [AllowAny]
+    search_fields = ('employeeID',)
+    ordering_fields = ('employeeID',)

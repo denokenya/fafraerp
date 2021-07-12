@@ -3,7 +3,6 @@ from datetime import datetime
 from django.utils import timezone
 
 
-
 FACULTY = "Faculty"
 ACCOUNTANT = "Accountant"
 ADMIN = "Admin"
