@@ -3,6 +3,9 @@ from datetime import datetime
 from django.utils import timezone
 
 
+#from ckeditor.fields import RichTextField
+
+
 FACULTY = "Faculty"
 ACCOUNTANT = "Accountant"
 ADMIN = "Admin"
@@ -92,6 +95,7 @@ MARITAL_STATUS = (
 
 
 class Designation(models.Model):
+
     name = models.CharField(max_length=50, unique=True)
     date = models.DateField(auto_now_add=True)
 
