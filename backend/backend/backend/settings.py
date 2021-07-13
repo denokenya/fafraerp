@@ -41,14 +41,19 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     'rest_framework',
+    'rest_framework_swagger',
     'drf_yasg',
     'blog',
     'employee',
 
 
-
 ]
 
+REST_FRAMEWORK = {
+
+    # Added default schema class because by default django rest required this class
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

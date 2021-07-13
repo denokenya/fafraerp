@@ -16,11 +16,23 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.schemas import get_schema_view
+from rest_framework.documentation import include_docs_urls
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('employee.urls')),
     path('accounts/', include('rest_framework.urls')),
+    path('schema/', get_schema_view(
+        title="SchoolAPI",
+        description="API for the School ERP",
+        version="1.0.0"
+    ), name="schoolerp-schema"),
+    path('', include_docs_urls(
+        title="School",
+        description="API for the School ERP",
+    ), name="schoolerp-docs")
 
 ]
 admin.site.site_header = "School ERP Admin Area"
